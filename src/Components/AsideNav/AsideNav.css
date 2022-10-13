@@ -1,0 +1,99 @@
+.aside{
+    background-color: var(--back);
+    height: 100%;
+    width: 6.5%;
+    position: fixed;
+    z-index: 2;
+}
+
+.aside_container{
+    padding: 1rem 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+ul{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.logo{
+    cursor: pointer;
+    transition: all 0.3s ease;
+    transform-origin: bottom;
+    animation: movefromdown 0.5s linear 0s infinite alternate-reverse;
+}
+.logo svg{
+    transition: all 0.3s ease;
+    transform-origin: bottom;
+    animation: bouncefromdown 1s linear 0s infinite alternate;
+}
+
+.nav{
+    display: flex;
+    flex-direction: column;
+    gap: 1.3rem;
+    align-content: center;
+    width: 75%;
+}
+.nav ul{
+    width: 100%;
+    background: var(--back-overlay);
+    padding: 2rem 0rem;
+    border-radius: 60px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 2rem;
+}
+.nav li{
+    display: flex;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.nav_item{
+    transition: all 0.3s ease;
+}
+
+.nav_item svg path{
+    transition: all 0.3s ease;
+}
+.nav_item.active svg path{
+    transition: all 0.3s ease;
+    fill: var(--sec);
+}
+.nav_item:hover svg{
+    transform: scale(1.2);
+    transition: all 0.3s ease;
+}
+.home:hover{
+    transform: rotate(5deg);
+    transition: all 0.3s ease;
+    transform-origin: right;
+}
+
+.playlist:hover svg .playlist_cover{
+    transform: rotate(20deg);
+    transition: all 0.3s ease;
+    transform-origin: right;
+}
+.playlist:hover svg{
+    overflow: visible;
+}
+
+.radio:hover svg{
+    transition: all 0.3s ease;
+    transform-origin: bottom;
+    animation: bouncefromdown 0.5s linear 0s infinite alternate;
+}
+.radio:hover{
+    transition: all 0.3s ease;
+    transform-origin: bottom;
+    animation: rotateleftandright 1s linear 0.5s infinite alternate;
+}
+

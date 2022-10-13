@@ -1,0 +1,14 @@
+.likers_picture{
+    height: 1.7rem;
+    width: 1.7rem;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-right: -10px;
+}
+.likers_picture:last-of-type{
+    margin-right: 0px;
+}
+.likers_picture img{
+    height: 1.7rem;
+    width: 100%;
+}

@@ -1,0 +1,128 @@
+.playlist_big{
+    height: 21.5rem;;
+    width: 60%;
+    background: var(--light-blue);
+    border-radius: 40px;
+    padding: 2rem;
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    transition: all 0.5s ease;
+}
+
+.playlist_big .words{
+    flex: 0 0 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-left: 1rem;
+    z-index: 2;
+}
+.playlist_big p, .playlist_big h1{
+    color: var(--white);
+}
+.playlist_big .imgs{
+    flex: 0 0 50%;
+}
+
+
+.title p{
+    font-size: 0.9rem;
+    font-weight: 100;
+}
+
+.playlist_big .middle p{
+    font-size: 1.2rem;
+    line-height: 1.5rem;
+    font-weight: 100;
+    margin: 0;
+    margin-top: 0.5rem;
+    width: 90%;
+}
+.middle h1{
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin: 0;
+}
+
+.likes{
+    transition: all 0.5s ease;
+    display: flex;
+    flex-direction: row;
+    position: relative;
+}
+
+.hero{
+    top: 0;
+    right: 0;
+    position: absolute;
+    height: 100%;
+    transition: all 0.5s ease;
+}
+
+.swirl_container{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    transition: all 0.5s ease;
+    border-radius: 40px;
+}
+.swirl{
+    top: -65%;
+    right: -20%;
+    position: absolute;
+    animation: rotate3d 3s linear infinite;
+    transition: all 0.5s ease;
+}
+
+.playlist_big::-webkit-scrollbar{
+    display: none;
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none; 
+}
+.playlist_big:hover{
+    overflow: visible;
+    z-index: 3;
+
+}
+.playlist_big:hover .hero{
+    transition: all 0.5s ease;
+    transform: scale(1.1);
+    transform-origin: bottom;
+    z-index: 3;
+    filter: brightness(100%);
+}
+.playlist_big:hover .swirl_container{
+    transition: all 0.7s ease;
+    background-image: linear-gradient(to right, var(--pri) , var(--sec));
+    opacity: 0.3;
+}
+.playlist_big:hover .swirl{
+    transition: all 0.5s ease;
+    transform: scale(1.1);
+    transform-origin: bottom;
+}
+
+.playlist_big .last{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 0.7rem;
+}
+.playlist_big .last p{
+    font-size: 1.2rem;
+    font-weight: 100;
+}
+
+.playlist_big svg{
+    transition: all 0.5s ease;
+}
+.playlist_big:hover svg{
+    transition: all 0.5s ease;
+    animation: growandshrink 0.7s linear infinite alternate;
+}

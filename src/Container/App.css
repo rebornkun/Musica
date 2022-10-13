@@ -1,0 +1,92 @@
+:root{
+
+  --back: #1D2123;
+  --back-overlay: #1A1E1F;
+  --back-shade: #171a1a;
+  --pri: rgba(239, 238, 224, 0.25);
+  --pri-light: #a3c5c4;
+  --sec: #FACD66;
+  --light-blue: #609EAF;
+  --white: #ffffff;
+  font-family: 'Quicksand', sans-serif;
+
+}
+
+.route_container{
+  height: 100vh;
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+
+@keyframes bouncefromdown {
+  0%{
+      transform: scaleY(0.8);
+  }
+  100%{
+      transform: scaleY(1.2);
+  }
+}
+@keyframes movefromdown {
+  0%{
+      transform: translateY(0px);
+  }
+  100%{
+      transform: translateY(10px);
+  }
+}
+
+@keyframes rotateleftandright {
+  0%{
+      transform: rotate(0deg);
+  }
+  33%{
+      transform: rotate(15deg);
+  }
+  66%{
+      transform: rotate(0deg);
+  }
+  100%{
+      transform: rotate(-15deg);
+  }
+}
+
+@keyframes rotateleftt {
+  0%{
+      transform: rotate(0deg);
+  }
+  100%{
+      transform: rotate(360deg);
+  }
+}
+
+@keyframes growandshrink {
+  0%{
+      transform: scale(1);
+  }
+  100%{
+      transform: scale(1.5);
+  }
+}
+
+@keyframes rotate3d {
+  0%{
+      transform: rotate3d(3, 1, 2, 0deg);
+  }
+  100%{
+      transform: rotate3d(0, 6, 2, 360deg);
+  }
+}
+.top{
+  position: fixed;
+  width: 100%;
+  display: flex;
+  justify-content: end;
+  z-index: 1;
+}
+.search_bar_part{
+  padding: 1.5rem 0rem;
+  background: var(--back);
+  width: 94%;
+}
