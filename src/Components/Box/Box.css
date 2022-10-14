@@ -1,0 +1,59 @@
+.box{
+    cursor: pointer;
+    transition: all 0.5s ease;
+    width: 12rem;
+}
+
+.box_img_container{
+    height: 12rem;
+    width: 12rem;
+    background: var(--light-blue);
+    border-radius: 40px;
+    overflow: hidden;
+    transition: all 0.5s ease;
+}
+
+.box_img_container img{
+    height: 12rem;
+    width: 12rem;
+    transition: all 0.5s ease;
+}
+
+.box_detials{
+    margin-top: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    transition: all 0.5s ease;
+}
+.box_detials p{
+    color: var(--white);
+    font-size: 1rem;
+    transition: all 0.5s ease;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.box_detials p:last-of-type{
+    opacity: 0.7;
+}
+
+.box:hover .box_img_container img{
+    transition: all 0.5s ease;
+    transform: scale(1.2);
+}
+.box:hover .box_detials p{
+    transition: all 0.5s ease;
+    animation: boxtextchangecolor 1.5s linear alternate infinite;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+@keyframes boxtextchangecolor {
+    0%, 100% {
+        color: var(--white);
+    }
+    50%{
+        color: var(--sec);    
+    }
+}

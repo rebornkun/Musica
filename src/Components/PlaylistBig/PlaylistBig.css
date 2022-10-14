@@ -1,5 +1,5 @@
 .playlist_big{
-    height: 21.5rem;;
+    height: 25.5rem;
     width: 60%;
     background: var(--light-blue);
     border-radius: 40px;
@@ -87,14 +87,13 @@
 }
 .playlist_big:hover{
     overflow: visible;
-    z-index: 3;
 
 }
 .playlist_big:hover .hero{
     transition: all 0.5s ease;
     transform: scale(1.1);
     transform-origin: bottom;
-    z-index: 3;
+    z-index: 6;
     filter: brightness(100%);
 }
 .playlist_big:hover .swirl_container{

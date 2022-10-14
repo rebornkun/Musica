@@ -1,0 +1,14 @@
+.slider{
+    width: 100%;
+    box-sizing: border-box;
+    overflow-x: scroll;
+    display: flex;
+    flex-direction: row;
+    gap: 1.5rem;
+}
+.slider::-webkit-scrollbar{
+    display: none;
+}
+.slider::-moz-scrollbar{
+    display: none;
+}
