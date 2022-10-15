@@ -1,0 +1,334 @@
+.playbar{
+    height: 7.5rem;
+    position: fixed;
+    width: 100%;
+    background-color: #1d21238c;
+    bottom: 0;
+    z-index: 10;
+    backdrop-filter: blur(15px);
+    padding-left: 6.5%;
+    padding-right: 6rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    border-top: 0.1px solid #5e606154;
+}
+
+.current_song{
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    height: 100%;
+    align-items: center;
+    cursor: pointer;
+    width: 200px;
+}
+.current_song_img{
+    width: 4rem;
+    height: 4rem;
+    border-radius: 15px;
+    overflow: hidden;
+}
+.current_song_img img{
+    width: 4rem;
+    height: 4rem;
+}
+
+.current_song_details{
+    display: flex;
+    flex-direction: column;
+    gap: 0.1rem;
+}
+.current_song_details p{
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--white);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.current_song_details p:last-of-type{
+    font-size: 0.8rem;
+    font-weight: 300;
+    color: var(--white);
+    opacity: 0.7;
+}
+
+.controls{
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 0rem;
+}
+.buttons{
+    display: flex;
+    flex-direction: row;
+    height: 50%;
+    justify-content: space-between;
+    align-items: center;
+    width: 60%;
+}
+.buttons svg{
+    transition: all 0.3s ease;
+    width: 1.5rem;
+    height: 1.5rem;
+    cursor: pointer;
+}
+
+.shuffle,
+.previous,
+.forward,
+.repeat{
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 50%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+.shuffle:hover,
+.previous:hover,
+.forward:hover,
+.repeat:hover{
+    background-color: var(--pri);
+    background-blend-mode:overlay;
+    transform: scale(1.2);
+    transition: all 0.3s ease;
+}
+
+.play_n_pause{
+    width: 2.5rem;
+    height: 2.5rem;
+    background-color: var(--sec);
+    border-radius: 50%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    box-shadow: 0px 0px 50px var(--white);
+    transition: all 0.3s ease;
+}
+.play_n_pause:hover{
+    background-color: var(--sec);
+    opacity: 0.9;
+    transform: scale(1.2);
+    box-shadow: 0px 0px 10px var(--white);
+    transition: all 0.3s ease;
+}
+.play_n_pause svg{
+    width: 1rem;
+    height: 1rem;
+}
+
+.progress{
+    width: 100%;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin: 0% auto;
+}
+
+#song_progress{
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    width: 100%;
+    height: 7px;
+    border-radius: 160px;
+    outline: none;
+    background-color: rgba(255, 255, 255, 0.144);
+    cursor: pointer;
+}
+#song_progress::-webkit-slider-thumb{
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    background-color: transparent;
+    width: 48px;
+    height: 48px;
+    position: relative;
+    cursor: pointer;
+    z-index: 3;
+    transform: scale(2);
+    background: transparent; 
+    border-color: transparent;
+    color: transparent;
+    
+}
+#song_progress::-webkit-slider-runnable-track{
+    /* -webkit-appearance: none; */
+    opacity: 0.3s;
+}
+#song_progress_keeper{
+    width: 12px;
+    height: 12px;
+    position: absolute;
+    box-shadow: 0px 0px 10px var(--back);
+    border-radius: 50%;
+    left: 0%;
+    transform: translateX(-50%);
+    cursor: pointer;
+    z-index: 2;
+}
+
+.song_progress_keeper_move{
+    width: 12px;
+    height: 12px;
+    position: absolute;
+    border-radius: 50%;
+    background-color: var(--sec);
+    left: 0%;
+    cursor: pointer;
+    z-index: 2;
+}
+
+.song_progress_keeper_move::after{
+    content: '';
+    width: 16px;
+    height: 16px;
+    background: transparent;
+    border: 2px solid white;
+    position: absolute;
+    border-radius: 50%;
+    left: 0%;
+    cursor: pointer;
+    z-index: 2;
+    transform: translateX(-20%) translateY(-20%);
+}
+.song_progress_keeper_move.onplay::after{
+    border: 2px solid white;
+    animation: onplayforprogress 1s linear infinite alternate, onplayforprogressshadow 1s linear infinite alternate;
+}
+
+@keyframes onplayforprogress {
+    0%{
+        transform: translateX(-20%) translateY(-20%) scale(1.2);
+    }
+    25%{
+        transform: translateX(-20%) translateY(-20%) scale(1.3);
+    }
+    50%{
+        transform: translateX(-20%) translateY(-20%) scale(1.2);
+    }
+    75%{
+        transform: translateX(-20%) translateY(-20%) scale(1.6);
+    }
+    100%{
+        transform: translateX(-20%) translateY(-20%) scale(1.3);
+    }
+}
+@keyframes onplayforprogressshadow {
+    0%{
+        box-shadow: 0px 0px 5px var(--white);
+    }
+    25%{
+        box-shadow: 0px 0px 10px var(--white);
+    }
+    50%{
+        box-shadow: 0px 0px 5px var(--white);
+    }
+    75%{
+        box-shadow: 0px 0px 20px var(--white);
+    }
+    100%{
+        box-shadow: 0px 0px 10px var(--white);
+    }
+}
+
+#song_progress_bar{
+    position: absolute;
+    animation: boxbarchangecolor 1.5s linear alternate  infinite;
+    left: 0;
+    width: 0%;
+    height: 100%;
+    z-index: 1;
+    border-radius: 30px;
+}
+
+@keyframes boxbarchangecolor {
+    0% {
+        background: linear-gradient(to right, var(--white), var(--sec), var(--white), var(--sec));
+    }
+    20% {
+        background: linear-gradient(to right, var(--sec), var(--white), var(--sec), var(--white));
+    }
+    40% {
+        background: linear-gradient(to right, var(--white), var(--sec), var(--white), var(--sec));
+    }
+    60% {
+        background: linear-gradient(to right, var(--sec), var(--white), var(--sec), var(--white));
+    }
+    80% {
+        background: linear-gradient(to right, var(--white), var(--sec), var(--white), var(--sec));
+    }
+    100%{
+        background: linear-gradient(to right, var(--sec), var(--white), var(--sec), var(--white));
+    }
+}
+
+.volume{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 0.5rem;
+    width: 200px;
+    justify-content: end;
+}
+.volume svg{
+    margin-top: 0.2rem;
+    width: 25px;
+    height: 25px;
+    padding-right: 0.3rem;
+    overflow: visible;
+}
+.volume.onplay svg .volumebass{
+    transform-origin: left;
+    animation: growandshrink 0.7s linear infinite alternate;
+}
+
+.volume_container{
+    width: 180px;
+    height: 6px;
+    position: relative;
+}
+#volume_progress{
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    height: 100%;
+    background-color: var(--white);
+    border-radius: 40px;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    background-color: rgba(255, 255, 255, 0.144);
+}
+#volume_progress::-webkit-slider-thumb{
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    background: transparent; 
+    border-color: transparent;
+    color: transparent;
+    z-index: 3;
+    height: 40px;
+    width: 40px;
+    transform: scale(2);
+    position: relative;
+}
+
+#song_volume_bar{
+    height: 100%;
+    width: 50%;
+    position: absolute;
+    background-color: var(--sec);
+    border-radius: 40px;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    transition: all 0.3s ease;
+}

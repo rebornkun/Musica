@@ -14,3 +14,15 @@ body {
 }
 
 
+body::-webkit-scrollbar-track{
+  width: 10px;
+  background-color: aqua;
+}
+body::-webkit-scrollbar-track-piece{
+  width: 10px;
+  background-color: aqua;
+}
+body::-webkit-scrollbar-thumb{
+  width: 0px;
+}
+

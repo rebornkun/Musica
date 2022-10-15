@@ -29,6 +29,12 @@ const Home = () => {
                         <Slider />
                     </div>
                 </div>
+                <div className='new_releases'>
+                    <h1>Popular in your area</h1>
+                    <div className='new_releases_slider'>
+                        <Slider />
+                    </div>
+                </div>
             </div>
         </div>
      );
