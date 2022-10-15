@@ -17,11 +17,12 @@
 .current_song{
     display: flex;
     flex-direction: row;
-    gap: 1rem;
+    /* gap: 0.5rem; */
     height: 100%;
     align-items: center;
     cursor: pointer;
     width: 200px;
+    justify-content: space-between;
 }
 .current_song_img{
     width: 4rem;
@@ -38,6 +39,8 @@
     display: flex;
     flex-direction: column;
     gap: 0.1rem;
+    flex: 0 0 65%;
+    width: 65%;
 }
 .current_song_details p{
     font-size: 1rem;
@@ -101,9 +104,42 @@
     transition: all 0.3s ease;
 }
 
+.shuffle.active svg path{
+    fill: var(--sec)
+}
+.repeat.once svg path,
+.repeat.loop svg path{
+    fill: var(--sec)
+}
+
+.no_repeat{
+    transform: scale(0);
+    transition: all 0.5s ease;
+}
+.no_repeat.show{
+    transform: scale(1);
+    transition: all 0.5s ease;
+}
+.repeat_once{
+    transform: scale(0);
+    transition: all 0.5s ease;
+}
+.repeat_once.show{
+    transform: scale(1);
+    transition: all 0.5s ease;
+}
+.repeat_loop{
+    transform: scale(0);
+    transition: all 0.5s ease;
+}
+.repeat_loop.show{
+    transform: scale(1);
+    transition: all 0.5s ease;
+}
+
 .play_n_pause{
-    width: 2.5rem;
-    height: 2.5rem;
+    width: 3rem;
+    height: 3rem;
     background-color: var(--sec);
     border-radius: 50%;
     display: flex;
@@ -113,6 +149,7 @@
     cursor: pointer;
     box-shadow: 0px 0px 50px var(--white);
     transition: all 0.3s ease;
+    position: relative;
 }
 .play_n_pause:hover{
     background-color: var(--sec);
@@ -122,8 +159,23 @@
     transition: all 0.3s ease;
 }
 .play_n_pause svg{
-    width: 1rem;
-    height: 1rem;
+    width: 1.5rem;
+    height: 1.5rem;
+}
+
+.progress_container{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    gap: 0.3rem;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.progress_container p{
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: var(--white);
 }
 
 .progress{
@@ -200,9 +252,11 @@
     cursor: pointer;
     z-index: 2;
     transform: translateX(-20%) translateY(-20%);
+    transition: all 1s ease;
 }
 .song_progress_keeper_move.onplay::after{
     border: 2px solid white;
+    transition: all 1s ease;
     animation: onplayforprogress 1s linear infinite alternate, onplayforprogressshadow 1s linear infinite alternate;
 }
 
@@ -243,12 +297,21 @@
 
 #song_progress_bar{
     position: absolute;
-    animation: boxbarchangecolor 1.5s linear alternate  infinite;
     left: 0;
     width: 0%;
     height: 100%;
     z-index: 1;
     border-radius: 30px;
+    transition: all 0.5s ease;
+}
+
+.song_progress_bar{
+    background-color: var(--sec);
+    transition: all 0.5s ease;
+}
+.song_progress_bar.onplay{
+    animation: boxbarchangecolor 1.5s linear alternate  infinite;
+    transition: all 0.5s ease;
 }
 
 @keyframes boxbarchangecolor {
@@ -331,4 +394,26 @@
     left: 0;
     z-index: 2;
     transition: all 0.3s ease;
+}
+
+.playicon{
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: auto;
+    transition: all 0.7s ease;
+    transform: scale(0);
+}
+.playicon.show{
+    transition: all 0.3s ease;
+    transform: scale(1);
+}
+.pauseicon{
+    position: absolute;
+    transition: all 0.7s ease;
+    transform: scale(0);
+}
+.pauseicon.show{
+    transition: all 0.3s ease;
+    transform: scale(1);
 }
