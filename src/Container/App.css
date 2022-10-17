@@ -1,4 +1,6 @@
-:root{
+
+
+.App{
 
   --back: #1D2123;
   --back-overlay: #1A1E1F;
@@ -7,10 +9,19 @@
   --pri-light: #a3c5c4;
   --sec: #FACD66;
   --light-blue: #609EAF;
+  --lighter-blue: #A4C7C6;
   --white: #ffffff;
   font-family: 'Quicksand', sans-serif;
+  transition: all 0.5s ease;
 
 }
+.normal{
+  --back: #1D2123;
+}
+.playlist{
+  --back: #1d212300;
+}
+
 
 .route_container{
   height: 100vh;
@@ -89,4 +100,9 @@
   padding: 1.5rem 0rem;
   background: var(--back);
   width: 94%;
+}
+
+.text-link {
+  color: inherit;
+  text-decoration: inherit;
 }

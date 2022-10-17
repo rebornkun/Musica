@@ -1,4 +1,4 @@
-import Charts from '../../Components/Charts/Charts';
+import Playlist from '../../Components/Playlist/Playlist';
 import PlaylistBig from '../../Components/PlaylistBig/PlaylistBig';
 import SearchBar from '../../Components/SearchBar/SearchBar';
 
@@ -7,6 +7,8 @@ import charttwo from '../../assets/charttwo.png'
 import chartthree from '../../assets/chartthree.png'
 import './Home.css'
 import Slider from '../../Components/Slider/Slider';
+import { Boxlist } from '../../Components/Boxlist';
+import { ChartList } from '../../Components/ChartList';
 
 const Home = () => {
     return ( 
@@ -15,24 +17,30 @@ const Home = () => {
                 <div className='playlist_part'>
                     <PlaylistBig />
                     <div className='charts_section'>
-                        <h1 className='top_charts_title'>Top Charts</h1>
+                        <h1 className='top_charts_title'>Top PlayLists</h1>
                         <div className='chart_container'>
-                            <Charts image={chartone} name='Golden age of 80s' creator='Sean swadder' time='2:34:45'/>
-                            <Charts image={charttwo} name='Reggae “n” blues' creator='Dj YK mule' time='1:02:42'/>
-                            <Charts image={chartthree} name='Tomorrow’s tunes' creator='Obi Datti' time='2:01:25'/>
+                            <Playlist image={chartone} name='Golden age of 80s' creator='Sean swadder' time='2:34:45'/>
+                            <Playlist image={charttwo} name='Reggae “n” blues' creator='Dj YK mule' time='1:02:42'/>
+                            <Playlist image={chartthree} name='Tomorrow’s tunes' creator='Obi Datti' time='2:01:25'/>
                         </div>
+                    </div>
+                </div>
+                <div className='new_releases'>
+                    <h1>Top Charts</h1>
+                    <div className='new_releases_slider'>
+                        <Slider List={<ChartList />}/>
                     </div>
                 </div>
                 <div className='new_releases'>
                     <h1>New releases.</h1>
                     <div className='new_releases_slider'>
-                        <Slider />
+                        <Slider List={<Boxlist/>}/>
                     </div>
                 </div>
                 <div className='new_releases'>
                     <h1>Popular in your area</h1>
                     <div className='new_releases_slider'>
-                        <Slider />
+                        <Slider List={<Boxlist/>}/>
                     </div>
                 </div>
             </div>

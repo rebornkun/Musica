@@ -6,8 +6,10 @@ import SearchBar from '../Components/SearchBar/SearchBar'
 import PlayBar from '../Components/PlayBar/PlayBar'
 
 import { songdata } from '../audios'
-import The_Fall from '../assets/music/The_Weeknd_The_Fall.mp3'
-import ChartPage from '../Pages/ChartPage/ChartPage'
+import PlaylistPage from '../Pages/PlaylistPage/PlaylistPage'
+
+import { BrowserRouter as Router, Route, Routes, useRoutes } from 'react-router-dom'
+import { UserContext } from '../Components/UserContext'
 
 function App() {
 
@@ -16,6 +18,8 @@ function App() {
   const [repeatType, setRepeatType] = useState('no_repeat');
   const [loadedList, setLoadedList] = useState([...songdata])
   const [currentSong, setCurrentSong] = useState(loadedList[2])
+
+  const [removeBack, SetRemoveBack] = useState(false)
 
   const audioelem = useRef();
   
@@ -98,42 +102,46 @@ function App() {
     return array.sort(() => Math.random() - 0.5);
   }
 
-  console.log('loadedList: ',loadedList)
-  console.log('songdata: ',songdata)
-
   return (
-    <div className="App">
-      <nav>
-        <AsideNav />
-      </nav>
-      <div className='top'>
-        <div className='search_bar_part'>
-          <SearchBar />
+    <UserContext.Provider>
+    <div className={removeBack === false ? "App normal" : "App playlist"}>
+        <nav>
+          <AsideNav />
+        </nav>
+        <div className='top'>
+          <div className='search_bar_part'>
+            <SearchBar />
+          </div>
+        </div>
+        <div className='route_container'>
+          <Routes>
+            <Route path='/'>
+              <Route index element={<Home />} />
+              <Route path='playlist' element={<PlaylistPage SetRemoveBack={SetRemoveBack} />} />
+            </Route>
+            <Route path='*' />
+          </Routes>
+        </div>
+        <div className='playbar_part'>
+          <audio src={currentSong.song} ref={audioelem} onTimeUpdate={onPlaying} />
+          <PlayBar 
+          isPlaying={isPlaying} 
+          setIsPlaying={setIsPlaying}
+          currentSong={currentSong}
+          setCurrentSong={setCurrentSong}
+          audioelem={audioelem}
+          loadedList={loadedList}
+          setLoadedList={setLoadedList}
+          isOnShuffle={isOnShuffle}
+          setisOnShuffle={setisOnShuffle}
+          shuffleLoadedList={shuffleLoadedList}
+          repeatType={repeatType}
+          setRepeatType={setRepeatType}
+          songdata={songdata}
+          />
         </div>
       </div>
-      <div className='route_container'>
-        {/* <Home /> */}
-        <ChartPage />
-      </div>
-      <div className='playbar_part'>
-        <audio src={currentSong.song} ref={audioelem} onTimeUpdate={onPlaying} />
-        <PlayBar 
-        isPlaying={isPlaying} 
-        setIsPlaying={setIsPlaying}
-        currentSong={currentSong}
-        setCurrentSong={setCurrentSong}
-        audioelem={audioelem}
-        loadedList={loadedList}
-        setLoadedList={setLoadedList}
-        isOnShuffle={isOnShuffle}
-        setisOnShuffle={setisOnShuffle}
-        shuffleLoadedList={shuffleLoadedList}
-        repeatType={repeatType}
-        setRepeatType={setRepeatType}
-        songdata={songdata}
-        />
-      </div>
-    </div>
+      </UserContext.Provider>
   )
 }
 

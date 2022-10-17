@@ -1,0 +1,134 @@
+.backdrop_image{
+    height: 100vh;
+    display: flex;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    position: fixed;
+    overflow: hidden;
+    /* background-image: url(../../assets/tommtunes.png); */
+    background: linear-gradient(to bottom, transparent, black);
+    z-index: -2;
+}
+.backdrop_image img{
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    margin: auto;
+    z-index: -2;
+}
+.backdrop_image .filter{
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    margin: auto;
+    background-image: linear-gradient(45deg, #000000de 60%, transparent);
+}
+
+.playlistpage{
+    height: fit-content;
+    width: 93.5vw;
+    display: flex;
+    background: var(--back);
+}
+
+.playlistpage_container {
+    width: 100%;
+    margin-bottom: 8rem;
+    margin-top: 5.5rem;
+}
+
+.playlistpage_top_part{
+    display: flex;
+    flex-direction: row;
+    gap: 1.5rem;
+}
+
+.playlistpage_top_part .img_container{
+    height: 20rem;
+    width: 20rem;
+    border-radius: 40px;
+    overflow: hidden;
+}
+.playlistpage_top_part .img_container img{
+    height: 20rem;
+    width: 20rem;
+}
+.playlistpage_top_part .details{
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    justify-content: flex-end;
+}
+.playlistpage_top_part .details .text{
+    display: flex;
+    gap: 0.5rem;
+    display: flex;
+    flex-direction: column;
+}
+.playlistpage_top_part .details .text h1{
+    color: var(--lighter-blue);
+    font-size: 2.5rem;
+}
+.playlistpage_top_part .details .text p{
+    color: var(--white);
+    font-weight: 200;
+    font-size: 1rem;
+}
+.buttons{
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    height: fit-content;
+}
+
+.play_all_button, .add_to_collection_button, .like_button{
+    display: flex;
+    flex-direction: row;
+    background: #ffffff23;
+    padding: 1rem;
+    gap: 0.7rem;
+    border-radius: 60px;
+    cursor: pointer;
+    transition: all 0.5s ease;
+    justify-content: center;
+    align-items: center;
+    filter: opacity(0.7);
+}
+.buttons p{
+    white-space: nowrap;
+    color: var(--white);
+    font-weight: 100;
+    font-size: 1rem;
+    transition: all 0.5s ease;
+}
+
+.play_all_button:hover, .add_to_collection_button:hover, .like_button:hover{
+    transition: all 0.5s ease;
+    transform: scale(1.1);
+    filter: opacity(1);
+}
+
+.play_all_button:hover svg{
+    transform: scale(1.3) rotate(360deg);
+}
+.like_button:hover svg{
+    animation: growandshrink 0.5s linear infinite alternate;
+}
+
+.playlistpage_last_part{
+    padding-right: 6rem;
+    margin-top: 3.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.7rem;
+}

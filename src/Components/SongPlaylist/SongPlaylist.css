@@ -1,0 +1,93 @@
+.songplaylist{
+    width: 100%;
+    background-color: #33373bab;
+    border-radius: 25px;
+    padding: 0.7rem;
+    display: flex;
+    flex-direction: row;
+    gap: 8%;
+    cursor: pointer;
+    transition: all 0.5s ease;
+}
+.songplaylist:hover{
+    transition: all 0.5s ease;
+    z-index: 6;
+    transform: scale(1.02);
+}
+
+.songplaylist .images_side{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1rem;
+    transition: all 0.5s ease;
+}
+.songplaylist .images_side svg{
+    height: 1.5rem;
+    width: 1.5rem;
+    cursor: pointer;
+    transition: all 0.5s ease;
+}
+.songplaylist .images_side svg:hover{
+    animation: growandshrink 0.5s linear infinite alternate;
+}
+.songplaylist .images_side .song_image{
+    height: 3rem;
+    width: 3rem;
+    overflow: hidden;
+    border-radius: 15px;
+}
+.songplaylist .images_side .song_image img{
+    height: 3rem;
+    width: 3rem;
+    transition: all 0.5s ease;
+}
+
+.text_n_option_side {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    padding-right: 2.5rem;
+    align-items: center;
+    justify-content: center;
+}
+.songplaylist .text_side{
+    transition: all 0.5s ease;
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-right: 2.5rem;
+    align-items: center;
+}
+.options{
+    width: 25%;
+    display: flex;
+    justify-content: end;
+}
+.options svg{
+    cursor: pointer;
+    height: 1.5rem;
+    width: 1.5rem;
+    transition: all 0.5s ease;
+}
+.options svg:hover{
+    transform: rotate(45deg);
+    transition: all 0.5s ease;
+}
+.songplaylist .text_side p{
+    font-size: 0.9rem;
+    color: var(--white);
+    width: 30%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.songplaylist .text_side p:nth-child(2){
+    text-align: center;
+    width: 20%;
+}
+.songplaylist .text_side p:nth-child(3){
+    text-align: end;
+    width: 15%;
+}

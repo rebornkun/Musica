@@ -1,0 +1,7 @@
+.chartbox{
+    cursor: pointer;
+}
+.chartbox .chartname{
+    margin-top: 0.5rem;
+    color: var(--white);
+}

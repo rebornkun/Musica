@@ -1,0 +1,140 @@
+
+.chartart{
+    cursor: pointer;
+    transition: all 0.5s ease;
+    width: 12rem;
+    position: relative;
+    transition: all 0.5s ease;
+}
+
+.chartart_img_container{
+    height: 12rem;
+    width: 12rem;
+    background: var(--back-shade);
+    border-radius: 40px;
+    overflow: hidden;
+    transition: all 0.5s ease;
+}
+
+.chartart_detials_container_one{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    justify-content: space-between;
+    transition: all 0.5s ease;
+}
+.chartart_detials_container_one .title{
+    margin-top: 0.5rem;
+}
+.chartart_detials_container_one .title p{
+    font-size: 1rem;
+    color: var(--white);
+    font-weight: 100;
+}
+.chartart_detials_container_one .title p:last-of-type{
+    color: var(--sec);
+    font-weight: 500;
+}
+.chartart_detials_container_one .big_title{
+    position: absolute;
+    bottom: 0;
+        
+}
+.chartart_detials_container_one .big_title p{
+    font-size: 2.7rem;
+    width: 100%;
+    white-space: nowrap;
+    color: var(--sec);
+    font-weight: 500;
+    height: fit-content;
+    display: flex;
+    flex-direction: row;
+    font-family: 'Rammetto One', cursive;
+    background-image: linear-gradient(45deg, green, white, green);
+    background-size: 100%;
+    background-color: var(--sec);
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    -webkit-text-fill-color: transparent; 
+    -moz-text-fill-color: transparent;
+    
+}
+
+.chartart_detials_container_two{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.chartart_detials_container_two .logo svg{
+    width: 100%;
+    height: 100%;
+    transition: all 0.5s ease;
+}
+.chartart_detials_container_two .lines{
+    width: 100%;
+    height: 100%;
+    transition: all 0.5s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    gap: 0.25rem;
+    align-items: flex-end;
+}
+.chartart_detials_container_two .lines div{
+    width: 80%;
+    height: 0.3rem;
+    background-color: var(--light-blue);
+    transition: all 0.5s ease;
+}
+.chartart_detials_container_two .lines div:last-of-type{
+    width: 100%;
+    background-color: var(--sec);
+    transition: all 0.5s ease;
+}
+
+.chartart_detials_container{
+    height: 12rem;
+    width: 12rem;
+    position: absolute;
+    top: 0;
+    border-radius: 40px;
+    overflow: hidden;
+    transition: all 0.5s ease;
+    padding: 1rem 1rem 1.5rem 1rem;
+    display: flex;
+    flex-direction: row;
+    transition: all 0.5s ease;
+}
+
+.chartart_detials_container_one{
+    flex: 0 0 65%;
+    height: 100%;
+}
+
+.chartart_detials_container_two{
+    flex: 0 0 35%;
+    height: 100%;
+}
+
+.chartart:hover .chartart_detials_container{
+    transform: scale(1.03);
+    transition: all 0.5s ease;
+}
+.chartart:hover .chartart_detials_container_two .lines div{
+    animation: increasewidth 1s linear 0s infinite alternate;
+    transition: all 0.5s ease;
+}
+.chartart:hover .chartart_detials_container_two .lines div:last-of-type{
+    animation: increasewidth 1s linear 0.3s infinite alternate;
+    transition: all 0.5s ease;
+}
+
+@keyframes increasewidth {
+    0%{
+        width: 100%;
+    }
+    100%{
+        width: 0%;
+    }
+}
