@@ -11,7 +11,7 @@
     background: linear-gradient(to bottom, transparent, black);
     z-index: -2;
 }
-.backdrop_image img{
+.backdrop_image .playlistback{
     height: 100%;
     width: 100%;
     position: absolute;
@@ -22,6 +22,17 @@
     margin: auto;
     z-index: -2;
 }
+.backdrop_image .chartback{
+    height: 200%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    margin: auto;
+    z-index: -2;
+}
+
 .backdrop_image .filter{
     height: 100%;
     width: 100%;
@@ -140,4 +151,26 @@
     display: flex;
     flex-direction: column;
     gap: 0.7rem;
+}
+
+.bigChartart .chartart {
+    width: 20rem;
+}
+.bigChartart .chartart_detials_container {
+    height: 100%;
+    width: 100%;
+}
+.bigChartart .chartart_img_container {
+    height: 20rem;
+    width: 20rem;
+    background: var(--back-shade);
+    border-radius: 40px;
+    overflow: hidden;
+    transition: all 0.5s ease;
+}
+.bigChartart .chartart_detials_container_one .title p {
+    font-size: 2rem;
+}
+.bigChartart .chartart_detials_container_one .big_title p {
+    font-size: 5rem;
 }

@@ -8,32 +8,33 @@ import pic4 from '../../assets/musicpics/music4.png'
 import pic5 from '../../assets/musicpics/music5.png'
 import pic6 from '../../assets/musicpics/music6.png'
 import pic7 from '../../assets/musicpics/music7.png'
+import '../../Components/Chartart/Chartart.css'
 import { useLocation } from 'react-router-dom';
-import { useEffect } from 'react';
+import Chartart from '../../Components/Chartart/Chartart';
 
-const PlaylistPage = () => {
+const ChartlistPage = () => {
     const location = useLocation()
     console.log(location)
-    
+    // console.log(location.state.bigimage)
     return ( 
         <div className="playlistpage">
             <div className='backdrop_image'>
-                <img className='playlistback' src={location.state.bigimage} />
+                <img className='chartback' src={location.state.bigimage} />
                 <div className='filter'></div>
             </div>
             <div className='playlistpage_container'>
                 <div className='playlistpage_top_part'>
-                    <div className='img_container'>
-                        <img src={location.state.image} alt='playlist'/>
+                    <div className='img_container bigChartart'>
+                        <Chartart name={location.state.name} firsttitle={location.state.firsttitle} country={location.state.country} amount={location.state.amount}/>
                     </div>
                     <div className='details'>
                         <div className='text'>
                             <div className='name_n_owner'>
                                 <h1>{location.state.name}</h1>
-                                <p>{`~ ${location.state.creator}`} </p>
+                                {/* <p>{`~ ${location.state.creator}`} </p> */}
                             </div>
                             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam, purus sit amet luctus venenatis</p>
-                            <p>64 songs ~ 16 hrs+</p>
+                            <p>{`${location.state.amount} songs ~ ${location.state.time}+`}</p>
                         </div>
                         <div className='buttons'>
                             <div className='play_all_button'>
@@ -74,4 +75,4 @@ const PlaylistPage = () => {
      );
 }
 
-export default PlaylistPage;
+export default ChartlistPage;

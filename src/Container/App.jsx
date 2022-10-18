@@ -7,6 +7,7 @@ import PlayBar from '../Components/PlayBar/PlayBar'
 
 import { songdata } from '../audios'
 import PlaylistPage from '../Pages/PlaylistPage/PlaylistPage'
+import ChartlistPage from '../Pages/PlaylistPage/ChartlistPage'
 
 import { Route, Routes, useLocation } from 'react-router-dom'
 import { UserContext } from '../Components/UserContext'
@@ -23,7 +24,8 @@ function App() {
 
   const audioelem = useRef();
 
-  let location = useLocation();
+  const location = useLocation()
+  console.log(location)
   
   useEffect(()=>{
 
@@ -36,6 +38,8 @@ function App() {
     // ga.send(["pageview", location.pathname]);
     console.log(location.pathname)
     if(location.pathname === '/playlist'){
+      SetRemoveBack(true)
+    }else if(location.pathname === '/chart'){
       SetRemoveBack(true)
     }else{
       SetRemoveBack(false)
@@ -128,6 +132,7 @@ function App() {
             <Route path='/'>
               <Route index element={<Home />} />
               <Route path='playlist' element={<PlaylistPage />} />
+              <Route path='chart' element={<ChartlistPage />} />
             </Route>
             <Route path='*' />
           </Routes>

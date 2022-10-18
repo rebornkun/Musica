@@ -1,7 +1,7 @@
 import './Chartart.css'
 import muiscalgo from '../../assets/musicalogo.png'
 
-const Chartart = () => {
+const Chartart = ({name, firsttitle, country, amount}) => {
     return ( 
         <div className="chartart">
             <div className='chartart_img_container'>
@@ -10,11 +10,11 @@ const Chartart = () => {
             <div className='chartart_detials_container'>
                 <div className='chartart_detials_container_one'>
                     <div className='title'>
-                        <p>TOP 100</p>
-                        <p>Nigeria</p>
+                        <p>{firsttitle}</p>
+                        <p>{country}</p>
                     </div>
                     <div className='big_title'>
-                        <p>100</p>
+                        <p>{amount}</p>
                     </div>
                 </div>
                 <div className='chartart_detials_container_two'>

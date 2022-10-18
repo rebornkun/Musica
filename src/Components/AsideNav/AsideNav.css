@@ -78,12 +78,12 @@ ul{
     transform-origin: right;
 }
 
-.playlist:hover svg .playlist_cover{
+.collection:hover svg .collection_cover{
     transform: rotate(20deg);
     transition: all 0.3s ease;
     transform-origin: right;
 }
-.playlist:hover svg{
+.collection:hover svg{
     overflow: visible;
 }
 
