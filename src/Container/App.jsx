@@ -22,6 +22,8 @@ function App() {
 
   const [removeBack, SetRemoveBack] = useState(false)
 
+  const [liked, setLiked] = useState(false)
+
   const audioelem = useRef();
 
   const location = useLocation()
@@ -116,8 +118,16 @@ function App() {
     return array.sort(() => Math.random() - 0.5);
   }
 
+  const toogleLike = () => {
+    if (liked === false){
+        setLiked(true)
+    }else{
+        setLiked(false)
+    }
+  }
+
   return (
-    <UserContext.Provider value={{ removeBack, SetRemoveBack }}>
+    <UserContext.Provider value={{ removeBack, SetRemoveBack, liked, setLiked, toogleLike }}>
     <div className={removeBack === true ? "App playlist" : "App normal"}>
         <nav>
           <AsideNav />

@@ -1,0 +1,104 @@
+.rank_container{
+    padding: 0.7rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #33373bab;
+    border-radius: 25px;
+}
+.rank_container p{
+    height: 3rem;
+    width: 3rem;
+    padding: 0.7rem;
+    color: aliceblue;
+    font-size: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Rammetto One', cursive;
+}
+
+.rankn{
+    background-size: 100%;
+    cursor: pointer;
+    
+}
+
+.gold{
+    background-image: radial-gradient(ellipse farthest-corner at right bottom, #FEDB37 0%, #FDB931 8%, #9f7928 30%, #8A6E2F 40%, transparent 80%),
+    radial-gradient(ellipse farthest-corner at left top, #FFFFFF 0%, #FFFFAC 8%, #D1B464 25%, #5d4a1f 62.5%, #5d4a1f 100%);
+    background-blend-mode:overlay;
+}
+.gold p{
+    color: var(--sec);
+    background-image: radial-gradient(ellipse farthest-corner at right bottom, #FEDB37 0%, #FDB931 8%, #9f7928 30%, #8A6E2F 40%, transparent 80%),
+    radial-gradient(ellipse farthest-corner at left top, #FFFFFF 0%, #FFFFAC 8%, #D1B464 25%, #5d4a1f 62.5%, #5d4a1f 100%);
+    background-color: var(--sec);
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.silver{
+    background-image: linear-gradient(
+        -72deg,
+        #dedede,
+        #ffffff 16%,
+        #ccc5c5 21%,
+        #ffffff 24%,
+        #454545 27%,
+        #dedede 36%,
+        #7e7777 45%,
+        #ffffff 60%,
+        #dedede 72%,
+        #ffffff 80%,
+        #dedede 84%,
+        #a1a1a1);
+        background-blend-mode:overlay;
+}
+.silver p{
+    color: var(--sec);
+    background-image: linear-gradient(
+        -72deg,
+        #dedede,
+        #ffffff 16%,
+        #ccc5c5 21%,
+        #ffffff 24%,
+        #454545 27%,
+        #dedede 36%,
+        #7e7777 45%,
+        #ffffff 60%,
+        #dedede 72%,
+        #ffffff 80%,
+        #dedede 84%,
+        #a1a1a1);
+        background-color: var(--sec);
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.bronze{
+    background-image: linear-gradient(
+        -72deg,
+        #ca7345,
+        #ffdeca 16%,
+        #ca7345 21%,
+        #ffdeca 24%,
+        #a14521 27%,
+        #ca7345 36%,
+        #ffdeca 45%,
+        #ffdeca 60%,
+        #ca7345 72%,
+        #ffdeca 80%,
+        #ca7345 84%,
+        #732100
+      );
+      background-color: var(--sec);
+}
+.bronze p{
+    color: #732100;
+    background-image: linear-gradient( -72deg, #ca7345, #ffdeca 16%, #ca7345 21%, #ffdeca 24%, #a14521 27%, #ca7345 36%, #ffdeca 45%, #ffdeca 60%, #ca7345 72%, #ffdeca 80%, #ca7345 84%, #732100 );
+    background-color: var(--sec);
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+}

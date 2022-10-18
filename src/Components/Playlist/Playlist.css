@@ -135,3 +135,9 @@
     color: var(--back);
     font-weight: 500;
 }
+
+.liked svg path:nth-child(1){
+    transition: all 0.3s ease;
+    fill: var(--liked);
+    stroke: var(--liked)
+}
