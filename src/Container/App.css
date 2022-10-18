@@ -1,5 +1,7 @@
 
-
+:root{
+  --back: #1D2123;
+}
 .App{
 
   --back: #1D2123;
@@ -19,7 +21,11 @@
   --back: #1D2123;
 }
 .playlist{
-  --back: #1d212300;
+  --back: transparent;
+}
+
+body{
+  background-color: var(--back);
 }
 
 
@@ -100,6 +106,7 @@
   padding: 1.5rem 0rem;
   background: var(--back);
   width: 94%;
+  transition: all 0.1s ease;
 }
 
 .text-link {

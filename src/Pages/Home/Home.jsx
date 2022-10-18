@@ -9,6 +9,9 @@ import './Home.css'
 import Slider from '../../Components/Slider/Slider';
 import { Boxlist } from '../../Components/Boxlist';
 import { ChartList } from '../../Components/ChartList';
+import tommtunes from '../../assets/tommtunes.png'
+import volumeup from '../../assets/volumeup.jpg'
+import other from '../../assets/other.jpg'
 
 const Home = () => {
     return ( 
@@ -19,9 +22,9 @@ const Home = () => {
                     <div className='charts_section'>
                         <h1 className='top_charts_title'>Top PlayLists</h1>
                         <div className='chart_container'>
-                            <Playlist image={chartone} name='Golden age of 80s' creator='Sean swadder' time='2:34:45'/>
-                            <Playlist image={charttwo} name='Reggae “n” blues' creator='Dj YK mule' time='1:02:42'/>
-                            <Playlist image={chartthree} name='Tomorrow’s tunes' creator='Obi Datti' time='2:01:25'/>
+                            <Playlist bigimage={other} image={other} name='Golden age of 80s' creator='Sean swadder' time='2:34:45'/>
+                            <Playlist bigimage={volumeup} image={volumeup} name='Reggae “n” blues' creator='Dj YK mule' time='1:02:42'/>
+                            <Playlist bigimage={tommtunes} image={tommtunes} name='Tomorrow’s tunes' creator='Obi Datti' time='2:01:25'/>
                         </div>
                     </div>
                 </div>

@@ -4,6 +4,7 @@
     width: 6.5%;
     position: fixed;
     z-index: 6;
+    transition: all 0.1s ease;
 }
 
 .aside_container{

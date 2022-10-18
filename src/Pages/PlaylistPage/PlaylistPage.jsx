@@ -8,21 +8,27 @@ import pic4 from '../../assets/musicpics/music4.png'
 import pic5 from '../../assets/musicpics/music5.png'
 import pic6 from '../../assets/musicpics/music6.png'
 import pic7 from '../../assets/musicpics/music7.png'
+import { useLocation } from 'react-router-dom';
 const PlaylistPage = () => {
+    const location = useLocation()
+    console.log(location)
     return ( 
         <div className="playlistpage">
             <div className='backdrop_image'>
-                <img src={tommtunes} />
+                <img src={location.state.bigimage} />
                 <div className='filter'></div>
             </div>
             <div className='playlistpage_container'>
                 <div className='playlistpage_top_part'>
                     <div className='img_container'>
-                        <img src={tommtunes} alt='playlist'/>
+                        <img src={location.state.image} alt='playlist'/>
                     </div>
                     <div className='details'>
                         <div className='text'>
-                            <h1>Tomorrow’s tunes</h1>
+                            <div className='name_n_owner'>
+                                <h1>{location.state.name}</h1>
+                                <p>{`~ ${location.state.creator}`} </p>
+                            </div>
                             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam, purus sit amet luctus venenatis</p>
                             <p>64 songs ~ 16 hrs+</p>
                         </div>

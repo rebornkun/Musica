@@ -3,6 +3,7 @@
     width: 93.5vw;
     display: flex;
     background: var(--back);
+    transition: all 0.1s ease;
 }
 
 .Home_Page_container{

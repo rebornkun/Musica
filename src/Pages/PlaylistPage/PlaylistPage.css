@@ -1,3 +1,4 @@
+
 .backdrop_image{
     height: 100vh;
     display: flex;
@@ -75,6 +76,14 @@
     display: flex;
     flex-direction: column;
 }
+
+.playlistpage_top_part .details .text .name_n_owner{
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+    gap: 0.3rem;
+}
+
 .playlistpage_top_part .details .text h1{
     color: var(--lighter-blue);
     font-size: 2.5rem;

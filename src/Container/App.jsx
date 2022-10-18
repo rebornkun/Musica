@@ -8,7 +8,7 @@ import PlayBar from '../Components/PlayBar/PlayBar'
 import { songdata } from '../audios'
 import PlaylistPage from '../Pages/PlaylistPage/PlaylistPage'
 
-import { Route, Routes } from 'react-router-dom'
+import { Route, Routes, useLocation } from 'react-router-dom'
 import { UserContext } from '../Components/UserContext'
 
 function App() {
@@ -22,6 +22,8 @@ function App() {
   const [removeBack, SetRemoveBack] = useState(false)
 
   const audioelem = useRef();
+
+  let location = useLocation();
   
   useEffect(()=>{
 
@@ -31,7 +33,15 @@ function App() {
       audioelem.current.pause()
     }
 
-  },[isPlaying, loadedList, currentSong])
+    // ga.send(["pageview", location.pathname]);
+    console.log(location.pathname)
+    if(location.pathname === '/playlist'){
+      SetRemoveBack(true)
+    }else{
+      SetRemoveBack(false)
+    }
+
+  },[isPlaying, loadedList, currentSong, location])
 
   const onPlaying = () => {
 
@@ -104,7 +114,7 @@ function App() {
 
   return (
     <UserContext.Provider value={{ removeBack, SetRemoveBack }}>
-    <div className={removeBack === false ? "App normal" : "App playlist"}>
+    <div className={removeBack === true ? "App playlist" : "App normal"}>
         <nav>
           <AsideNav />
         </nav>
@@ -117,7 +127,7 @@ function App() {
           <Routes>
             <Route path='/'>
               <Route index element={<Home />} />
-              <Route path='playlist' element={<PlaylistPage SetRemoveBack={SetRemoveBack} />} />
+              <Route path='playlist' element={<PlaylistPage />} />
             </Route>
             <Route path='*' />
           </Routes>

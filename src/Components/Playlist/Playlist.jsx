@@ -3,12 +3,12 @@ import { Link } from 'react-router-dom';
 import './Playlist.css'
 import { UserContext } from '../UserContext'
 
-const Playlist = ({image, name, creator, time}) => {
+const Playlist = ({bigimage, image, name, creator, time}) => {
 
     const { SetRemoveBack } = useContext(UserContext)
     return ( 
         <div className='chart'>
-            <Link className='text-link' to='/playlist' onClick={() => SetRemoveBack(true)}>
+            <Link className='text-link' to='/playlist' state={{bigimage: bigimage, image: image, name: name, creator: creator, time: time}}>
                 <div className='chart_slide'></div>
                 <div className='chart_first_part'>
                     <div className='chart_img'>
