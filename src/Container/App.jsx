@@ -8,7 +8,7 @@ import PlayBar from '../Components/PlayBar/PlayBar'
 import { songdata } from '../audios'
 import PlaylistPage from '../Pages/PlaylistPage/PlaylistPage'
 
-import { BrowserRouter as Router, Route, Routes, useRoutes } from 'react-router-dom'
+import { Route, Routes } from 'react-router-dom'
 import { UserContext } from '../Components/UserContext'
 
 function App() {
@@ -103,7 +103,7 @@ function App() {
   }
 
   return (
-    <UserContext.Provider>
+    <UserContext.Provider value={{ removeBack, SetRemoveBack }}>
     <div className={removeBack === false ? "App normal" : "App playlist"}>
         <nav>
           <AsideNav />
