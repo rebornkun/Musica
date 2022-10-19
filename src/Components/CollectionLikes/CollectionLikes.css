@@ -1,0 +1,6 @@
+.collection_likes_song_part{
+    margin-top: 2rem;
+    gap: 1rem;
+    display: flex;
+    flex-direction: column;
+}

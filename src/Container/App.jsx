@@ -11,6 +11,10 @@ import ChartlistPage from '../Pages/PlaylistPage/ChartlistPage'
 
 import { Route, Routes, useLocation } from 'react-router-dom'
 import { UserContext } from '../Components/UserContext'
+import Collection from '../Pages/Collection/Collection'
+import CollectionBoxList from '../Components/CollectionBoxList'
+import CollectionLikes from '../Components/CollectionLikes/CollectionLikes'
+import CollectionBoxListContainer from '../Components/CollectionBoxListContainer'
 
 function App() {
 
@@ -143,6 +147,10 @@ function App() {
               <Route index element={<Home />} />
               <Route path='playlist' element={<PlaylistPage />} />
               <Route path='chart' element={<ChartlistPage />} />
+            </Route>
+            <Route path='/collection/*' element={<Collection />} >
+              <Route path='collections' element={<CollectionBoxListContainer />} />
+              <Route path='likes' element={<CollectionLikes />} />
             </Route>
             <Route path='*' />
           </Routes>

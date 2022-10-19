@@ -1,0 +1,156 @@
+.collectionbox{
+    cursor: pointer;
+    transition: all 0.5s ease;
+    width: 18rem;
+    height: 18rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.collectionbox_img_container{
+    height: 100%;
+    width: 100%;
+    background: var(--light-blue);
+    border-radius: 40px;
+    overflow: hidden;
+    transition: all 0.5s ease;
+}
+
+.collectionbox_img_container img{
+    height: 100%;
+    width: 100%;
+    transition: all 0.5s ease;
+}
+
+.filter{
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    background-image: linear-gradient(0deg, #000000 50%, transparent);
+    opacity: 0.5;
+    border-radius: 40px;
+}
+
+.collectionbox_detials{
+    margin: 0rem 0rem 1.5rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    transition: all 0.5s ease;
+    position: absolute;
+    bottom: 0;
+    width: 8rem;
+    transform: translateY(40%);
+}
+.collectionbox_detials p{
+    color: var(--white);
+    font-size: 2rem;
+    font-weight: 200;
+    transition: all 0.5s ease;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.collectionbox_detials p:nth-child(2){
+    opacity: 0.7;
+    font-size: 0.7rem;
+}
+
+.collectionbox_detials p:nth-child(3){
+    margin-top: 2rem;
+    opacity: 0.7;
+    font-size: 0.7rem;
+}
+
+.collectionbox:hover .collectionbox_detials{
+    transition: all 0.5s ease;
+    transform: translateY(0%);
+}
+.collectionbox:hover .collectionbox_img_container img{
+    transition: all 0.5s ease;
+    transform: scale(1.2);
+    transform-origin: top;
+}
+.collectionbox:hover .collectionbox_detials p{
+    transition: all 0.5s ease;
+    font-weight: 100;
+}
+.playbutton_container{
+    width: 3.5rem;
+    height: 3.5rem;
+    position: absolute;
+    bottom: 2rem;
+    right: 2rem;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+.playbutton{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-color: var(--sec);
+    border-radius: 50%;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    opacity: 0;
+    transition: all 0.5s ease;
+}
+.playbutton::before{
+    content: '';
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-color: var(--sec);
+    border-radius: 50%;
+    opacity: 0;
+    animation: growandshrink 1s linear 0s infinite;
+    transition: all 0.5s ease;
+}
+.playbutton::after{
+    content: '';
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-color: var(--sec);
+    border-radius: 50%;
+    opacity: 0;
+    animation: growandshrink 1s linear 0.5s infinite;
+    transition: all 0.5s ease;
+}
+.collectionbox:hover .playbutton{
+    opacity: 0.5;
+    transition: all 0.5s ease;
+}
+.collectionbox:hover .playbutton::before{
+    opacity: 0.4;
+    transition: all 0.5s ease;
+}
+.collectionbox:hover .playbutton::after{
+    opacity: 0.3;
+    transition: all 0.5s ease;
+}
+
+.playbutton_container svg{
+    width: 1.5rem;
+    height: 1.5rem;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    margin: auto;
+    position: absolute;
+    transition: all 0.5s ease;
+    opacity: 0;
+}
+.playbutton_container svg path{
+    fill: var(--sec);
+}
+.collectionbox:hover .playbutton_container svg{
+    transition: all 0.5s ease;
+    transform: scale(1.15) rotate(360deg);
+    opacity: 1;
+}
+

@@ -1,0 +1,85 @@
+.Collection_Page{
+    height: fit-content;
+    width: 93.5vw;
+    display: flex;
+    background: var(--back);
+    transition: all 0.1s ease;
+}
+
+.Collection_Page_container{
+    width: 100%;
+    margin-bottom: 8rem;
+}
+
+.Collection_Page_container .collection_buttons{
+    margin-top: 5.5rem;
+    width: 100%;
+    display: flex;
+    gap: 1rem;
+}
+
+.Collection_Page_container .collection_buttons p{
+    color: var(--light);
+    transition: all 0.5s ease;
+}
+.Collection_Page_container .collection_buttons .my_collection_btn{
+    padding: 1rem 1.5rem;
+    background: transparent;
+    border: 1px solid var(--pri);
+    border-radius: 30px;
+    cursor: pointer;
+    font-size: 1rem;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.5s ease;
+}
+.Collection_Page_container .collection_buttons .my_collection_btn::before{
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: var(--pri);
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    transition: all 0.5s ease;
+    border-radius: 30px;
+    transform: scaleX(0);
+}
+.Collection_Page_container .collection_buttons .my_collection_btn:hover::before{
+    transition: all 0.5s ease;
+    transform: scaleX(1);
+}
+
+.Collection_Page_container .collection_buttons .my_collection_likes_btn{
+    padding: 1rem 2rem;
+}
+.Collection_Page_container .collection_buttons .my_collection_btn.active{
+    transition: all 0.5s ease;
+    background-color: var(--sec);
+}
+.Collection_Page_container .collection_buttons .my_collection_btn.active p{
+    transition: all 0.5s ease;
+    color: var(--back);
+    font-weight: 500;
+}
+
+.collection_rest_part{
+    margin-top: 2rem;
+    padding-right: 6rem;
+}
+.collection_rest{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    row-gap: 2rem;
+    column-gap: 2rem;
+}
+
+.likes_box_list{
+    display: flex;
+    flex-direction: row;
+    row-gap: 1rem;
+    column-gap: 1rem;
+}
