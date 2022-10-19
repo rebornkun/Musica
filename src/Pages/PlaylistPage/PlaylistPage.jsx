@@ -10,7 +10,6 @@ import pic6 from '../../assets/musicpics/music6.png'
 import pic7 from '../../assets/musicpics/music7.png'
 import { useLocation } from 'react-router-dom';
 import { useContext, useEffect, useState } from 'react';
-import { UserContext } from '../../Components/UserContext';
 
 const PlaylistPage = () => {
     const location = useLocation()
@@ -31,7 +30,6 @@ const PlaylistPage = () => {
             setAddedToCollection(false)
         }
     }
-    console.log(location)
 
     return ( 
         <div className="playlistpage">
