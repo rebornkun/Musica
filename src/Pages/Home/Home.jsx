@@ -35,7 +35,7 @@ const Home = () => {
                     </div>
                 </div>
                 <div className='new_releases'>
-                    <h1>New releases.</h1>
+                    <h1>New releases</h1>
                     <div className='new_releases_slider'>
                         <Slider List={<Boxlist/>}/>
                     </div>
