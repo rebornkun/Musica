@@ -67,7 +67,13 @@ ul{
 .nav_item.active svg path{
     transition: all 0.3s ease;
     fill: var(--sec);
+    fill-opacity: 1;
 }
+/* .navlist.active svg path{
+    transition: all 0.3s ease;
+    fill: var(--sec);
+    fill-opacity: 1;
+} */
 .nav_item:hover svg{
     transform: scale(1.2);
     transition: all 0.3s ease;

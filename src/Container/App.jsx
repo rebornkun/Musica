@@ -149,8 +149,6 @@ function App() {
               <Route path='chart' element={<ChartlistPage />} />
             </Route>
             <Route path='/collection/*' element={<Collection />} >
-              <Route path='collections' element={<CollectionBoxListContainer />} />
-              <Route path='likes' element={<CollectionLikes />} />
             </Route>
             <Route path='*' />
           </Routes>
