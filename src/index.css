@@ -10,9 +10,16 @@ body {
   padding: 0rem;
   margin: 0rem;
   font-family: 'Quicksand', sans-serif;
-  overflow: overlay;
+  background-color: var(--back);
+  overflow: scroll;
 }
 
+body::-webkit-scrollbar{
+  display: none;
+}
+body::-moz-scrollbar{
+  display: none;
+}
 
 body::-webkit-scrollbar-track{
   width: 10px;

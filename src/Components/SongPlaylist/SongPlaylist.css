@@ -91,3 +91,49 @@
     text-align: end;
     width: 15%;
 }
+
+@media screen and (max-width: 576px) {
+
+.songplaylist {
+    width: 100%;
+    padding: 0.8rem;
+    flex-direction: column;
+    gap: 0.5rem;  
+    position: relative;
+    height: 6.5rem;
+}
+
+.songplaylist .text_side p {
+    font-size: 0.9rem;
+    color: var(--white);
+    width: 10rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.text_n_option_side {
+    padding-right: 0rem;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.songplaylist .text_side {
+    transition: all 0.5s ease;
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-right: 0rem;
+    align-items: center;
+}
+
+.options {
+    width: fit-content;
+    position: absolute;
+    right: 0;
+    top: 0;
+    padding: 0.8rem 0.8rem 0rem 0rem;
+}
+
+}

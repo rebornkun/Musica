@@ -16,6 +16,8 @@ import CollectionBoxList from '../Components/CollectionBoxList'
 import CollectionLikes from '../Components/CollectionLikes/CollectionLikes'
 import CollectionBoxListContainer from '../Components/CollectionBoxListContainer'
 
+import axios from 'axios'
+
 function App() {
 
   const [isPlaying, setIsPlaying] = useState(false);
@@ -27,6 +29,7 @@ function App() {
   const [removeBack, SetRemoveBack] = useState(false)
 
   const [liked, setLiked] = useState(false)
+  const [menuIsOpen, setmenuIsOpen] = useState(false)
 
   const audioelem = useRef();
 
@@ -41,7 +44,6 @@ function App() {
       audioelem.current.pause()
     }
 
-    // ga.send(["pageview", location.pathname]);
     console.log(location.pathname)
     if(location.pathname === '/playlist'){
       SetRemoveBack(true)
@@ -51,7 +53,39 @@ function App() {
       SetRemoveBack(false)
     }
 
+    // searchAPi()
+
   },[isPlaying, loadedList, currentSong, location])
+
+  const options = {
+    method: 'GET',
+    url: 'https://spotify81.p.rapidapi.com/search',
+    params: {
+      q: 'davido',
+      type: 'multi',
+      offset: '0',
+      limit: '10',
+      numberOfTopResults: '5'
+    },
+    headers: {
+      'X-RapidAPI-Key': '3d4ddbdab7mshf57e9645ec3c4b2p13d009jsncc246d583eea',
+      'X-RapidAPI-Host': 'spotify81.p.rapidapi.com'
+    }
+  };
+
+  async function searchAPi() {
+
+    try{
+
+      const response = await axios.request(options)
+      console.log(response);  
+
+      }catch(e){
+        console.log(e)
+    }
+
+  }
+
 
   const onPlaying = () => {
 
@@ -130,15 +164,25 @@ function App() {
     }
   }
 
+  const handleMenuToggle = () => {
+
+    if (menuIsOpen === false){
+      setmenuIsOpen(true)
+    }else{
+      setmenuIsOpen(false)
+    }
+
+  }
+
   return (
     <UserContext.Provider value={{ removeBack, SetRemoveBack, liked, setLiked, toogleLike }}>
     <div className={removeBack === true ? "App playlist" : "App normal"}>
         <nav>
-          <AsideNav />
+          <AsideNav handleMenuToggle={handleMenuToggle} menuIsOpen={menuIsOpen} setmenuIsOpen={setmenuIsOpen} />
         </nav>
         <div className='top'>
           <div className='search_bar_part'>
-            <SearchBar />
+            <SearchBar handleMenuToggle={handleMenuToggle} menuIsOpen={menuIsOpen} setmenuIsOpen={setmenuIsOpen} />
           </div>
         </div>
         <div className='route_container'>

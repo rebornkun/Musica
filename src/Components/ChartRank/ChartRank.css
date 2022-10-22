@@ -102,3 +102,12 @@
     -webkit-background-clip: text;
     -moz-background-clip: text;
 }
+
+@media screen and (max-width: 576px) {
+
+    .rank_container {
+        height: 6.5rem;
+    }
+    
+    
+}

@@ -26,11 +26,6 @@
   --back: transparent;
 }
 
-body{
-  background-color: var(--back);
-}
-
-
 .route_container{
   height: 100vh;
   display: flex;
@@ -102,12 +97,12 @@ body{
   width: 100%;
   display: flex;
   justify-content: end;
-  z-index: 5;
+  z-index: 6;
 }
 .search_bar_part{
   padding: 1.5rem 0rem;
   background: var(--back);
-  width: 94%;
+  width: 100%;
   transition: all 0.1s ease;
 }
 

@@ -5,10 +5,11 @@
     position: fixed;
     z-index: 6;
     transition: all 0.1s ease;
+    margin-top: 5rem;
 }
 
 .aside_container{
-    padding: 1rem 0.5rem;
+    padding: 0rem 0.5rem;
     display: flex;
     align-items: center;
     justify-content: flex-start;
@@ -20,18 +21,6 @@ ul{
     list-style: none;
     margin: 0;
     padding: 0;
-}
-
-.logo{
-    cursor: pointer;
-    transition: all 0.3s ease;
-    transform-origin: bottom;
-    animation: movefromdown 0.5s linear 0s infinite alternate-reverse;
-}
-.logo svg{
-    transition: all 0.3s ease;
-    transform-origin: bottom;
-    animation: bouncefromdown 1s linear 0s infinite alternate;
 }
 
 .nav{
@@ -78,7 +67,7 @@ ul{
     transform: scale(1.2);
     transition: all 0.3s ease;
 }
-.home:hover{
+.home:hover div{
     transform: rotate(5deg);
     transition: all 0.3s ease;
     transform-origin: right;
@@ -98,9 +87,102 @@ ul{
     transform-origin: bottom;
     animation: bouncefromdown 0.5s linear 0s infinite alternate;
 }
-.radio:hover{
+.radio:hover div{
     transition: all 0.3s ease;
     transform-origin: bottom;
     animation: rotateleftandright 1s linear 0.5s infinite alternate;
 }
 
+.nav li .navlist p {
+    display: none;
+}
+
+@media screen and (max-width: 1280px) {
+
+    
+}
+
+@media screen and (max-width: 1024px) {
+
+    .aside_container {
+        padding: 0rem 0rem;
+    }
+
+}
+
+@media screen and (max-width: 860px) {
+
+    .nav {
+        gap: 3rem;
+        width: 100%;
+        padding: 0rem 1.5rem;
+    }
+
+    .nav ul {
+        width: 100%;
+        background: transparent;
+        padding: 0rem;
+        border-radius: 60px;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        gap: 3rem;
+    }
+
+    .nav li {
+        justify-content: start;
+    }
+    .nav li .navlist {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 1rem;
+    }
+    .nav li .navlist p {
+        display: block;
+        color: rgb(239, 238, 224);
+        opacity: 0.25;
+        font-weight: 600;
+        font-size: 1.5rem;
+    }
+
+    .nav_item.active .navlist p {
+        transition: all 0.3s ease;
+        color: var(--sec);
+        opacity: 1;
+    }
+
+    .nav_item svg{
+        height: 1.5rem;
+        width: 1.5rem;
+        transition: all 0.3s ease;
+    }
+    
+    .aside{
+        height: 100%;
+        width: 100%;
+        z-index: 11;
+        transition: all 0.1s ease;
+        margin-top: 5rem;
+        background-color: #1D2123;
+        transform: translateX(-100%);
+    }
+    .aside.show{
+        height: 100%;
+        width: 100%;
+        z-index: 11;
+        transition: all 0.5s ease;
+        margin-top: 5rem;
+        transform: translateX(-0%);
+    }
+
+    .aside_container {
+        margin-top: 4rem;
+    }
+
+}
+
+@media screen and (max-width: 576px) {
+
+
+}
