@@ -447,8 +447,9 @@
 @media screen and (max-width: 860px) {
 
     .playbar_container {
-        padding-left: 1.5rem;
-        padding-right: 1.5rem;
+        padding-left: 1rem;
+        padding-right: 1rem;
+        padding-bottom: 1rem;
         position: relative;
     }
 
@@ -468,10 +469,11 @@
 
     .progress_container{
         position: absolute;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        margin: auto;
+    bottom: 0.5rem;
+    left: 0rem;
+    right: 0rem;
+    padding: 0rem 1rem;
+    margin: auto;
     }
 
 }

@@ -13,7 +13,7 @@
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    margin-left: 1.5rem;
+    margin-left: 1rem;
     position: relative;
     display: none;
 }
@@ -204,7 +204,7 @@
 
     .logo_search{
         justify-content: space-between;
-        margin-right: 1.5rem;
+        margin-right: 1rem;
         gap: 1rem;
     }
 

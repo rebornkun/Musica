@@ -59,9 +59,6 @@
 
 @media screen and (max-width: 1280px) {
 
-    .playlist_big {
-        width: 65%;
-    }
     
     .charts_section {
         padding: 0rem 0rem 0rem 1rem;
@@ -74,18 +71,6 @@
         flex-direction: column;
         padding-right: 5%;
         padding-left: 1.5%;
-    }
-
-    .playlist_big {
-        width: 100%;
-    }
-
-    .playlist_big .words {
-        flex: 0 0 60%;
-    }
-
-    .playlist_big .imgs {
-        flex: 0 0 40%;
     }
 
     .charts_section {
@@ -125,9 +110,20 @@
 
 @media screen and (max-width: 860px) {
 
+    .charts_section {
+        margin-left: 1rem;
+        margin-right: 0rem;
+    }
+
+    
+    .chart_container {
+        padding-right: 3rem;
+    }
+
     .Home_Page {
         width: 100vw;
-        padding: 0rem 1.5rem;
+        overflow: hidden;
+        /* padding: 0rem 1.5rem; */
     }
 
     .playlist_part {
@@ -139,7 +135,15 @@
 
     .new_releases_slider {
         padding-right: 0%;
-        padding-left: 0%;
+        padding-left: 1rem;
+    }
+
+    .slider {
+        padding-right: 2rem;
+    }
+
+    .new_releases h1 {
+        padding-left: 1rem;
     }
     
 
@@ -147,31 +151,5 @@
 
 @media screen and (max-width: 576px) {
 
-    .playlist_big {
-        height: 60vh;
-        padding: 2rem;
-    }
-    
-    .playlist_big .words {
-        flex: 0 0 100%;
-        padding-left: 0rem;
-    }
-    
-    .playlist_big .imgs {
-        flex: 0 0 0%;
-    }
-
-    .playlist_big .middle {
-        height: 100%;
-        margin-bottom: 3rem;
-        display: flex;
-        flex-direction: column;
-        justify-content: end;
-    }
-
-    .hero {
-        object-fit: cover;
-        z-index: -1;
-    }
     
 }
