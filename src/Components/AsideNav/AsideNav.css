@@ -115,7 +115,7 @@ ul{
     .nav {
         gap: 3rem;
         width: 100%;
-        padding: 0rem 1.5rem;
+        padding: 0rem 1rem;
     }
 
     .nav ul {
@@ -161,23 +161,23 @@ ul{
     .aside{
         height: 100%;
         width: 100%;
-        z-index: 11;
+        z-index: 7;
         transition: all 0.1s ease;
-        margin-top: 5rem;
+        margin-top: 0rem;
         background-color: #1D2123;
         transform: translateX(-100%);
     }
     .aside.show{
         height: 100%;
         width: 100%;
-        z-index: 11;
+        z-index: 5;
         transition: all 0.5s ease;
-        margin-top: 5rem;
+        margin-top: 0rem;
         transform: translateX(-0%);
     }
 
     .aside_container {
-        margin-top: 4rem;
+        margin-top: 8rem;
     }
 
 }

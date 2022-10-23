@@ -265,10 +265,11 @@
 
     .playlistpage {
         width: 100vw;
-        margin-left: 1.5rem;
-        margin-right: 1.5rem;
+        margin-left: 1rem;
+        margin-right: 1rem;
     }
-
+    
+    
     .playlistpage_last_part {
         padding-left: 0%;
         padding-right: 0%;
@@ -325,6 +326,7 @@
 
 @media screen and (max-width: 576px) {
 
+
     .chartList_last_part {
         gap: 0.5rem;
     }
@@ -359,7 +361,7 @@
     }
     
     .ranking{
-        display: none;
+        /* display: none; */
     }
 
 }

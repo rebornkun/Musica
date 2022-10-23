@@ -154,3 +154,38 @@
     opacity: 1;
 }
 
+@media screen and (max-width: 860px) {
+    .collectionbox {
+        /* transform: scale(0.8); */
+        width: 14rem;
+        height: 14rem;
+    }
+
+    .collectionbox_detials {
+        margin: 0rem 0rem 1rem 1rem;
+    }
+    .collectionbox_detials p {
+        font-size: 1.5rem;
+    }
+
+    .collectionbox_detials p:nth-child(2) {
+        font-size: 0.5rem;
+    }
+
+    .collectionbox_detials p:nth-child(3) {
+        margin-top: 2rem;
+        font-size: 0.5rem;
+    }
+
+    .playbutton_container {
+        width: 3rem;
+        height: 3rem;
+        bottom: 1.5rem;
+        right: 1.5rem;
+    }
+}
+
+@media screen and (max-width: 576px) {
+
+
+}

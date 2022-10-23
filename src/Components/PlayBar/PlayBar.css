@@ -446,6 +446,10 @@
 
 @media screen and (max-width: 860px) {
 
+    .playbar{
+        z-index: 4;
+    }
+
     .playbar_container {
         padding-left: 1rem;
         padding-right: 1rem;
@@ -476,10 +480,17 @@
     margin: auto;
     }
 
+
 }
 
 @media screen and (max-width: 576px) {
 
-    
+    .controls {
+        width: 50%;
+    }
 
+    .current_song_img {
+        flex-shrink: 0;
+        margin-right: 0.5rem;
+    }
 }
