@@ -19,7 +19,9 @@ import CollectionBoxListContainer from '../Components/CollectionBoxListContainer
 import axios from 'axios'
 
 function App() {
-
+  
+  const [isSignedIn, setIsSignedIn] = useState(false);
+  
   const [isPlaying, setIsPlaying] = useState(false);
   const [isOnShuffle, setisOnShuffle] = useState(false);
   const [repeatType, setRepeatType] = useState('no_repeat');
@@ -51,6 +53,10 @@ function App() {
       SetRemoveBack(true)
     }else{
       SetRemoveBack(false)
+    }
+
+    if(menuIsOpen === true){
+      
     }
 
     // searchAPi()
