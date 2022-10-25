@@ -17,6 +17,7 @@ import CollectionLikes from '../Components/CollectionLikes/CollectionLikes'
 import CollectionBoxListContainer from '../Components/CollectionBoxListContainer'
 
 import axios from 'axios'
+import SignIn from '../Pages/SignIn/SignIn'
 
 function App() {
   
@@ -40,10 +41,15 @@ function App() {
   
   useEffect(()=>{
 
-    if(isPlaying){
-      audioelem.current.play()
+
+    if(isSignedIn === true){
+      if(isPlaying){
+        audioelem.current.play()
+      }else{
+        audioelem.current.pause()
+      }
     }else{
-      audioelem.current.pause()
+
     }
 
     console.log(location.pathname)
@@ -181,46 +187,54 @@ function App() {
   }
 
   return (
-    <UserContext.Provider value={{ removeBack, SetRemoveBack, liked, setLiked, toogleLike }}>
+    <UserContext.Provider value={{ removeBack, SetRemoveBack, liked, setLiked, toogleLike, isSignedIn, setIsSignedIn }}>
     <div className={removeBack === true ? "App playlist" : "App normal"}>
-        <nav>
-          <AsideNav handleMenuToggle={handleMenuToggle} menuIsOpen={menuIsOpen} setmenuIsOpen={setmenuIsOpen} />
-        </nav>
-        <div className='top'>
-          <div className='search_bar_part'>
-            <SearchBar handleMenuToggle={handleMenuToggle} menuIsOpen={menuIsOpen} setmenuIsOpen={setmenuIsOpen} />
+        <Routes>
+          <Route path='/signin' element={<SignIn />} />
+          <Route path='/*' element={ 
+        <>
+          <nav>
+            <AsideNav handleMenuToggle={handleMenuToggle} menuIsOpen={menuIsOpen} setmenuIsOpen={setmenuIsOpen} />
+          </nav>
+          <div className='top'>
+            <div className='search_bar_part'>
+              <SearchBar handleMenuToggle={handleMenuToggle} menuIsOpen={menuIsOpen} setmenuIsOpen={setmenuIsOpen} />
+            </div>
           </div>
-        </div>
-        <div className='route_container'>
-          <Routes>
-            <Route path='/'>
-              <Route index element={<Home />} />
-              <Route path='playlist' element={<PlaylistPage />} />
-              <Route path='chart' element={<ChartlistPage />} />
-            </Route>
-            <Route path='/collection/*' element={<Collection />} >
-            </Route>
-            <Route path='*' />
-          </Routes>
-        </div>
-        <div className='playbar_part'>
-          <audio src={currentSong.song} ref={audioelem} onTimeUpdate={onPlaying} />
-          <PlayBar 
-          isPlaying={isPlaying} 
-          setIsPlaying={setIsPlaying}
-          currentSong={currentSong}
-          setCurrentSong={setCurrentSong}
-          audioelem={audioelem}
-          loadedList={loadedList}
-          setLoadedList={setLoadedList}
-          isOnShuffle={isOnShuffle}
-          setisOnShuffle={setisOnShuffle}
-          shuffleLoadedList={shuffleLoadedList}
-          repeatType={repeatType}
-          setRepeatType={setRepeatType}
-          songdata={songdata}
-          />
-        </div>
+          <div className='route_container'>
+            <Routes>
+              <Route path='/'>
+                <Route index element={<Home />} />
+                <Route path='playlist' element={<PlaylistPage />} />
+                <Route path='chart' element={<ChartlistPage />} />
+              </Route>
+              <Route path='/collection/*' element={<Collection />} >
+              </Route>
+              <Route path='*' />
+            </Routes>
+          </div>
+          <div className='playbar_part'>
+            <audio src={currentSong.song} ref={audioelem} onTimeUpdate={onPlaying} />
+            <PlayBar 
+            isPlaying={isPlaying} 
+            setIsPlaying={setIsPlaying}
+            currentSong={currentSong}
+            setCurrentSong={setCurrentSong}
+            audioelem={audioelem}
+            loadedList={loadedList}
+            setLoadedList={setLoadedList}
+            isOnShuffle={isOnShuffle}
+            setisOnShuffle={setisOnShuffle}
+            shuffleLoadedList={shuffleLoadedList}
+            repeatType={repeatType}
+            setRepeatType={setRepeatType}
+            songdata={songdata}
+            />
+          </div>
+        </>
+
+          }/>
+        </Routes>
       </div>
       </UserContext.Provider>
   )

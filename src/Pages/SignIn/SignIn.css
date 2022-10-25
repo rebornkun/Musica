@@ -1,0 +1,102 @@
+.signin_page{
+    width: 100vw;
+    height: 100vh;
+}
+.signin_page_container{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    overflow: hidden;
+}
+
+.form_section{
+    width: 100%;
+    height: 100%;
+}
+.form_back{
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transition: all 0.5s ease;
+}
+.form_back.show{
+    opacity: 1;
+    transition: all 0.5s ease;
+}
+.middle_section{
+    position: absolute;
+    height: 100%;
+    width: 2rem;
+    right: 0;
+    left: 0;
+    margin: auto;
+}
+.Wallpaper_section {
+    width: 40rem;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    overflow: hidden;
+    transition: all 0.5s ease;
+    position: relative;
+}
+.sign_filter {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    background-image: linear-gradient(0deg, #000000 40%, transparent);
+    opacity: 0.5;
+    transition: all 0.5s ease;
+}
+.Wallpaper_section img{
+    width: 100%;
+    height: 100%;
+    flex-shrink: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translateY(100%);
+    transform-origin: top;
+    opacity: 0;
+    transition: all 0.5s ease;
+}
+.Wallpaper_section img.show{
+    transform: translateX(0%);
+    opacity: 1;
+    transition: all 0.5s ease;
+}
+
+.signin_page_artist{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    transition: all 0.5s ease;
+}
+
+.signin_page_artist_detials{
+    padding: 1rem;
+    transition: all 0.5s ease;
+}
+.signin_page_artist_detials p{
+    font-size: 3rem;
+    font-weight: 800;
+    opacity: 0.8;
+    color: var(--white);
+    transition: all 0.5s ease;
+}
+.signin_page_artist_detials p:last-of-type{
+    font-size: 2rem;
+    font-weight: 500;
+    opacity: 0.4;
+    color: var(--white);
+}
