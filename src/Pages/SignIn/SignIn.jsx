@@ -4,6 +4,7 @@ import weeknd from '../../assets/weekndposter.jpg'
 import davido from '../../assets/davido.jpg'
 import ariana from '../../assets/ariana.jpg'
 import { useEffect, useState } from "react";
+import jwtDecode from "jwt-decode";
 
 const SignIn = () => {
     
@@ -53,6 +54,28 @@ const SignIn = () => {
         },delay)
         
     },[index])
+
+    function handleCallbackResponse(response){
+        console.log("Encoded JWT ID token: ", response.credential);
+        let userObj = jwtDecode(response.credential)
+        console.log(userObj)
+    }
+    useEffect(()=>{
+        google.accounts.id.initialize({
+            client_id: "829434199515-526gk4106ii2j4sido647r3jl97nubv5.apps.googleusercontent.com",
+            callback: handleCallbackResponse 
+        })
+
+        google.accounts.id.renderButton(
+            document.getElementById('googleButton'),
+            {theme: "outline", size: "large"}
+        )
+
+        google.accounts.id.prompt()
+    },[])
+
+      // 829434199515-526gk4106ii2j4sido647r3jl97nubv5.apps.googleusercontent.com
+  // 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
 
     const check =()=>{
         let elems = document.querySelectorAll('.wallpaper');
@@ -160,7 +183,7 @@ const SignIn = () => {
                                     <p className="musica">Musi<p className="colsec">ca</p></p>
                                 </div>
                                 </div>
-                                <div className="login_with_google_btn">
+                                <div id="googleButton" className="login_with_google_btn">
                                     <svg width="30" height="30" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <path d="M30.0014 16.3109C30.0014 15.1598 29.9061 14.3198 29.6998 13.4487H16.2871V18.6442H24.1601C24.0014 19.9354 23.1442 21.8798 21.2394 23.1864L21.2127 23.3604L25.4536 26.58L25.7474 26.6087C28.4458 24.1665 30.0014 20.5731 30.0014 16.3109Z" fill="#4285F4"/>
                                         <path d="M16.2862 30C20.1433 30 23.3814 28.7555 25.7465 26.6089L21.2386 23.1865C20.0322 24.011 18.4132 24.5866 16.2862 24.5866C12.5085 24.5866 9.30219 22.1444 8.15923 18.7688L7.9917 18.7827L3.58202 22.1272L3.52435 22.2843C5.87353 26.8577 10.6989 30 16.2862 30Z" fill="#34A853"/>

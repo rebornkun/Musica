@@ -126,9 +126,6 @@
     width: 24rem;
     height: 60rem;
     background: conic-gradient(var(--sec), rgba(255, 255, 255, 0.651), var(--sec), rgba(255, 255, 255, 0.63));
-    /* background: linear-gradient(to right, var(--white), var(--sec)); */
-    /* background: linear-gradient(90deg, var(--sec) 33%, var(--light), var(--sec) 33%); */
-    /* box-shadow: 5px 5px 30px var(--back); */
     position: absolute;
     top: 0;
     right: 0;

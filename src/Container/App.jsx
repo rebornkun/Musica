@@ -69,6 +69,8 @@ function App() {
 
   },[isPlaying, loadedList, currentSong, location])
 
+  
+
   const options = {
     method: 'GET',
     url: 'https://spotify81.p.rapidapi.com/search',
@@ -84,6 +86,8 @@ function App() {
       'X-RapidAPI-Host': 'spotify81.p.rapidapi.com'
     }
   };
+
+
 
   async function searchAPi() {
 
