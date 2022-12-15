@@ -195,6 +195,7 @@ function App() {
     <div className={removeBack === true ? "App playlist" : "App normal"}>
         <Routes>
           <Route path='/signin' element={<SignIn />} />
+          <Route path='/signup' element={<SignIn />} />
           <Route path='/*' element={ 
         <>
           <nav>

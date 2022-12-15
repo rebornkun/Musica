@@ -136,9 +136,8 @@
     /* background: var(--back-shade); */
     background: transparent;
     box-shadow: 5px 5px 30px var(--back);
-    position: relative;
+    position: absolute;
     overflow: hidden;
-    z-index: 2;
 }
 .form_field::before {
     content: '';
@@ -155,6 +154,27 @@
     animation: rotateleftt 5s linear 0s infinite ;
 }
 
+.signin_form{
+    z-index: 3;
+    transition: all 0.5s ease;
+    transform: rotateY(0deg);
+}
+.signin_form.flip{
+    z-index: 2;
+    transition: all 0.5s ease;
+    transform: rotateY(360deg);
+}
+.signup_form{
+    z-index: 3;
+    transition: all 0.5s ease;
+    transform: rotateY(360deg);
+}
+.signup_form.flip{
+    z-index: 2;
+    transition: all 0.5s ease;
+    transform: rotateY(0deg);
+}
+
 .form_field_cotainer{
     z-index: 5;
     width: 34.2rem;
@@ -166,6 +186,21 @@
     left: 0;
     margin: auto;
     padding: 3rem 6rem;
+    background: transparent;
+}
+.signup_form_field_cotainer{
+    z-index: 5;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+    overflow: scroll;
+    margin: 3rem 0rem 3rem;
+    padding: 0rem 6rem;
     background: transparent;
 }
 
@@ -259,6 +294,22 @@
     letter-spacing: 0.5px;
     padding: 0.2rem 0rem;
 }
+.inputs input::placeholder{
+    color: #727171;
+}
+.inputs input::selection{
+    background-color: var(--sec);
+}
+
+.inputs input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus, 
+input:-webkit-autofill:active{
+    /* -webkit-box-shadow: 0 0 0 30px white inset !important; */
+    transition: background-color 5000s ease-in-out 0s;
+    /* -webkit-text-fill-color: yellow !important; */
+}
+
 
 .emailfield, .passwordfield{
     width: 100%;
@@ -318,6 +369,11 @@
     gap: 0.8rem;
     cursor: pointer;
     margin-bottom: 1.5rem;
+    transition: all 0.5s ease;
+}
+.siginpage_signin_button:hover{
+    transition: all 0.5s ease;
+    transform: scale(1.05);
 }
 .siginpage_signin_button p{
     font-size: 1rem;
